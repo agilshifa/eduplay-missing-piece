@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPlay — Missing Piece</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Rubik:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home"><span class="brand-icon">🧩</span><span>EduPlay</span></a>
+    <div class="brand-sub">/ Missing Piece</div>
+    <nav class="nav">
+      <button class="nav-btn active" data-page="home">Mulai Bermain</button>
+      <button class="nav-btn" data-page="game">Arena Permainan</button>
+      <button class="nav-btn" data-page="report">Rapor & Trofi</button>
+    </nav>
+    <button class="sound-btn" id="soundToggle" title="Aktif/nonaktifkan suara">Suara</button>
+  </header>
+
+  <main>
+    <section id="homePage" class="page active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">PERMAINAN KOGNITIF INTERAKTIF</span>
+          <h1>Siap mencari<br><span>yang hilang?</span></h1>
+          <p>Amati gambar, ingat benda-bendanya, lalu temukan objek yang menghilang. Ayo latih ingatan visualmu!</p>
+          <button class="primary-btn" id="startBtn">Mulai Petualangan <span>➜</span></button>
+          <div class="mini-facts"><span>⭐ 15 Ronde</span><span>❤️ 3 Nyawa</span><span>🎯 3 Tahap</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="art-card"><span>🎈</span><span>🌸</span><span>⚽</span><span>🐱</span><span class="missing">?</span></div>
+          <div class="float f1">✨</div><div class="float f2">⭐</div><div class="float f3">🧠</div>
+        </div>
+      </div>
+
+      <div class="section-heading"><span class="eyebrow">CARA BERMAIN</span><h2>Tiga langkah mudah</h2></div>
+      <div class="steps">
+        <article class="info-card"><h3>1. Amati</h3><p>Perhatikan semua gambar yang muncul di layar dan ingat benda-bendanya.</p></article>
+        <article class="info-card"><h3>2. Ingat</h3><p>Satu benda akan menghilang. Coba ingat benda yang sebelumnya kamu lihat.</p></article>
+        <article class="info-card"><h3>3. Pilih</h3><p>Pilih gambar yang menurutmu merupakan benda yang hilang.</p></article>
+      </div>
+      </section>
+
+    <section id="gamePage" class="page">
+      <div class="game-heading">
+        <div><span class="eyebrow">SIMULATOR INTERAKTIF · 15 RONDE</span><h1>Arena Missing Piece</h1><p>Amati objek dengan teliti, lalu temukan yang menghilang!</p></div>
+        
+      </div></div>
+      <div class="stage-line"><span id="stageLabel">TAHAP 1 · DASAR</span><span id="phaseLabel">FASE 1 · AMATI</span></div>
+
+      <div class="game-card">
+        <div class="instruction" id="instruction">Perhatikan semua benda berikut dan ingat baik-baik, ya!</div>
+        <div class="timer-wrap"><div class="timer-number" id="timerNumber">5</div><span id="timerCaption">Detik untuk mengamati</span></div>
+        <div class="object-grid" id="objectGrid"></div>
+        <div id="answerArea" class="answer-area hidden">
+          <h2>Benda mana yang menghilang?</h2>
+          <p>Pilih satu jawaban yang benar.</p>
+          <div id="choiceGrid" class="choice-grid"></div>
+        </div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <div class="game-actions">
+          <button id="nextBtn" class="primary-btn hidden">Lanjutkan <span>➜</span></button>
+          <button id="restartBtn" class="secondary-btn">Ulangi permainan</button>
+        </div>
+      </div>
+      <p class="game-note">💡 Tidak perlu terburu-buru. Amati gambar dengan tenang dan pilih jawabanmu.</p>
+    </section>
+
+    <section id="reportPage" class="page">
+      <div class="report-hero">
+        <div class="trophy">🏆</div>
+        <span class="eyebrow">HASIL PETUALANGANMU</span>
+        <h1 id="reportTitle">Rapor Permainan</h1>
+        <p id="reportMessage">Selesaikan permainan untuk melihat hasilmu di sini.</p>
+      </div>
+      <div class="report-stats">
+        <article class="stat-card"><span>⭐</span><small>TOTAL SKOR</small><strong id="finalScore">—</strong></article>
+        <article class="stat-card"><span>🎯</span><small>AKURASI</small><strong id="accuracy">—</strong></article>
+        <article class="stat-card"><span>✅</span><small>JAWABAN BENAR</small><strong id="correctCount">—</strong></article>
+        <article class="stat-card"><span>⏱️</span><small>RATA-RATA RESPONS</small><strong id="avgTime">—</strong></article>
+      </div>
+      <div class="report-detail">
+        <h2>Performa setiap tahap</h2>
+        <div id="stageResults" class="stage-results">
+          <p class="empty-report">Belum ada data permainan. Selesaikan 15 ronde untuk melihat laporan.</p>
+        </div>
+        <p class="report-disclaimer">Catatan: Rapor ini menggambarkan performa selama permainan, bukan diagnosis atau hasil tes psikologi terstandar.</p>
+      </div>
+      <div class="report-actions"><button class="primary-btn" id="playAgainBtn">Main Lagi ↻</button><button class="secondary-btn" id="printBtn">Cetak Rapor 🖨️</button></div>
+    </section>
+  </main>
+
+  <footer>© 2026 EduPlay · Belajar sambil bermain 🌈</footer>
+  <script src="script.js"></script>
+</body>
+</html>
